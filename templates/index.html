@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{if .SiteTitle}}{{.SiteTitle}}{{else}}E-Nav{{end}}</title>
+    <link rel="icon" type="image/png" href="/images/shouye.png">
     
     <!-- 引入字体图标库 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -512,8 +513,11 @@
             gap: 6px;
         }
 
-        .police-beian-link i {
-            font-size: 13px;
+        .police-beian-link img {
+            width: 16px;
+            height: 16px;
+            object-fit: contain;
+            flex-shrink: 0;
         }
         
         /* 开关控件 */
@@ -734,9 +738,9 @@
         <footer>
             <p class="footer-text">
                 © 2025 <a class="footer-link" href="https://github.com/ecouus/E-Nav" target="_blank">E-Nav</a>
-                {{if .SiteFooter}} · {{.SiteFooter}}{{else}} · 一个简洁易用的网址导航页 · 版权所有{{end}}
+                {{if .SiteFooter}} · {{.SiteFooter}}{{end}}
                 {{if .IcpNumber}} · <a class="footer-link beian-link" href="{{if .IcpLink}}{{.IcpLink}}{{else}}https://beian.miit.gov.cn/{{end}}" target="_blank" rel="noopener noreferrer">{{.IcpNumber}}</a>{{end}}
-                {{if .PoliceNumber}} · <a class="footer-link beian-link police-beian-link" href="{{if .PoliceLink}}{{.PoliceLink}}{{else}}http://www.beian.gov.cn/portal/registerSystemInfo{{end}}" target="_blank" rel="noopener noreferrer"><i class="fas fa-shield-alt" aria-hidden="true"></i><span>{{.PoliceNumber}}</span></a>{{end}}
+                {{if .PoliceNumber}} · <a class="footer-link beian-link police-beian-link" href="{{if .PoliceLink}}{{.PoliceLink}}{{else}}http://www.beian.gov.cn/portal/registerSystemInfo{{end}}" target="_blank" rel="noopener noreferrer"><img src="/images/gaba.png" alt="公安备案图标"><span>{{.PoliceNumber}}</span></a>{{end}}
             </p>
         </footer>                     
     </div>

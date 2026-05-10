@@ -98,8 +98,10 @@ func main() {
 	r := mux.NewRouter()
 	
 	// 静态文件服务
-	fs := http.FileServer(http.Dir("./static"))
-	r.PathPrefix("/static/").Handler(http.StripPrefix("/static/", fs))
+	staticFs := http.FileServer(http.Dir("./static"))
+	r.PathPrefix("/static/").Handler(http.StripPrefix("/static/", staticFs))
+	imageFs := http.FileServer(http.Dir("./images"))
+	r.PathPrefix("/images/").Handler(http.StripPrefix("/images/", imageFs))
 	
 	// 公共页面
 	r.HandleFunc("/", homeHandler).Methods("GET")

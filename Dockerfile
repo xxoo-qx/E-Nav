@@ -23,6 +23,7 @@ RUN apk add --no-cache ca-certificates tzdata
 
 COPY --from=builder /app/E-Nav ./E-Nav
 COPY --from=builder /app/templates ./templates
+COPY --from=builder /app/images ./images
 
 RUN mkdir -p /app/data
 
