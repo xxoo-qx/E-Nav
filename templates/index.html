@@ -454,8 +454,15 @@
             line-clamp: 2;
             white-space: normal;
             line-height: 1.5;
-            min-height: 39px;
             transition: color var(--transition-time);
+        }
+
+        .bookmark-desc:not(:empty) {
+            min-height: 39px;
+        }
+
+        .bookmark-desc:empty {
+            display: none;
         }
         
         .bookmark-item:hover .bookmark-desc {
