@@ -3,3 +3,4 @@ data/
 .cursor/
 agent-transcripts/
 *.log
+*.exe
