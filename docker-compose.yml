@@ -1,0 +1,9 @@
+services:
+  e-nav:
+    image: ecouus/e-nav:latest
+    container_name: e-nav
+    ports:
+      - "1239:1239"
+    volumes:
+      - ./data:/app/data
+    restart: unless-stopped

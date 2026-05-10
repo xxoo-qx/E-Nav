@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>管理员登录 - E-Nav</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #4a6cf7;
+            --primary-light: #6b85f8;
+            --primary-dark: #3a56d7;
+            --surface-color: #ffffff;
+            --background-color: #f0f3f8;
+            --text-primary: #333333;
+            --text-secondary: #666666;
+            --text-on-primary: #ffffff;
+            --shadow-color: rgba(0, 0, 0, 0.1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Microsoft YaHei', 'PingFang SC', sans-serif;
+        }
+        
+        body {
+            background-color: var(--background-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .login-container {
+            width: 100%;
+            max-width: 400px;
+            background: var(--surface-color);
+            border-radius: 16px;
+            padding: 40px 30px;
+            box-shadow: 0 10px 40px var(--shadow-color);
+            text-align: center;
+        }
+        
+        .login-logo {
+            margin-bottom: 30px;
+            font-size: 24px;
+            color: var(--primary-color);
+        }
+        
+        .login-logo i {
+            font-size: 48px;
+            display: block;
+            margin-bottom: 15px;
+        }
+        
+        h1 {
+            color: var(--text-primary);
+            margin-bottom: 30px;
+            font-weight: 500;
+        }
+        
+        .login-form input {
+            width: 100%;
+            padding: 14px 20px;
+            margin-bottom: 20px;
+            border: 2px solid #eee;
+            border-radius: 8px;
+            font-size: 16px;
+            outline: none;
+            transition: all 0.3s;
+        }
+        
+        .login-form input:focus {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 4px rgba(74, 108, 247, 0.15);
+        }
+        
+        .login-form button {
+            width: 100%;
+            background: var(--primary-color);
+            border: none;
+            color: var(--text-on-primary);
+            padding: 15px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+        
+        .login-form button:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(74, 108, 247, 0.3);
+        }
+        
+        .back-link {
+            display: inline-block;
+            margin-top: 30px;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 14px;
+            transition: all 0.3s;
+        }
+        
+        .back-link:hover {
+            color: var(--primary-color);
+        }
+        
+        .error-message {
+            color: #f44336;
+            margin-bottom: 20px;
+            padding: 10px;
+            background: #ffebee;
+            border-radius: 8px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-logo">
+            <i class="fas fa-lock"></i>
+            E-Nav 管理员区域
+        </div>
+        
+        <h1>管理员登录</h1>
+        
+        <div class="error-message" id="errorMsg">
+            密码错误，请重新输入！
+        </div>
+        
+        <form class="login-form" action="/admin/login" method="post">
+            <input type="password" name="password" placeholder="请输入管理员密码" required>
+            <button type="submit">登录</button>
+        </form>
+        
+        <a href="/" class="back-link">
+            <i class="fas fa-arrow-left"></i> 返回首页
+        </a>
+    </div>
+    
+    <script>
+        // 检查URL参数是否包含错误标记
+        document.addEventListener('DOMContentLoaded', function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            if(urlParams.has('error')) {
+                document.getElementById('errorMsg').style.display = 'block';
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,10 @@
+.git
+.github
+.cursor
+agent-transcripts
+node_modules
+bin
+dist
+*.log
+Dockerfile.md
+README.md
