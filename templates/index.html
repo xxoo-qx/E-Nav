@@ -448,8 +448,13 @@
             font-size: 13px;
             color: var(--text-tertiary);
             overflow: hidden;
-            text-overflow: ellipsis;
-            white-space: nowrap;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 2;
+            line-clamp: 2;
+            white-space: normal;
+            line-height: 1.5;
+            min-height: 39px;
             transition: color var(--transition-time);
         }
         
