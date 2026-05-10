@@ -516,6 +516,11 @@
             display: inline-flex;
             align-items: center;
             gap: 6px;
+            vertical-align: middle;
+        }
+
+        .police-beian-link {
+            align-items: center;
         }
 
         .police-beian-link img {
@@ -523,6 +528,12 @@
             height: 16px;
             object-fit: contain;
             flex-shrink: 0;
+            display: block;
+        }
+
+        .police-beian-link span {
+            display: inline-block;
+            line-height: 1.4;
         }
         
         /* 开关控件 */
@@ -745,7 +756,7 @@
                 © 2025 <a class="footer-link" href="https://github.com/ecouus/E-Nav" target="_blank">E-Nav</a>
                 {{if .SiteFooter}} · {{.SiteFooter}}{{end}}
                 {{if .IcpNumber}} · <a class="footer-link beian-link" href="{{if .IcpLink}}{{.IcpLink}}{{else}}https://beian.miit.gov.cn/{{end}}" target="_blank" rel="noopener noreferrer">{{.IcpNumber}}</a>{{end}}
-                {{if .PoliceNumber}} · <a class="footer-link beian-link police-beian-link" href="{{if .PoliceLink}}{{.PoliceLink}}{{else}}http://www.beian.gov.cn/portal/registerSystemInfo{{end}}" target="_blank" rel="noopener noreferrer"><img src="/images/gaba.png" alt="公安备案图标"><span>{{.PoliceNumber}}</span></a>{{end}}
+                {{if .PoliceNumber}} · <a class="footer-link beian-link police-beian-link" href="{{if .PoliceLink}}{{.PoliceLink}}{{else}}http://www.beian.gov.cn/portal/registerSystemInfo{{end}}" target="_blank" rel="noopener noreferrer"><img src="/images/gaba.png" alt="" aria-hidden="true"><span>{{.PoliceNumber}}</span></a>{{end}}
             </p>
         </footer>                     
     </div>
